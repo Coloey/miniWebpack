@@ -1,0 +1,22 @@
+{
+  "name": "mini-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.20.7",
+    "@babel/generator": "^7.20.7",
+    "@babel/parser": "^7.20.7",
+    "@babel/traverse": "^7.20.10",
+    "@babel/types": "^7.20.7",
+    "babylon": "^6.18.0",
+    "ejs": "^3.1.8",
+    "tapable": "^2.2.1"
+  }
+}
