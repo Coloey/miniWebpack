@@ -1,7 +1,12 @@
 ## webpack 打包流程：
 
-1.读取入口文件内容 2.分析入口文件，递归读取模块所依赖的文件内容，生成 AST 语法树 3.根据 AST 语法树，生成浏览器能够运行的代码
-具体细节： 1.先配置好 webpack.config.js 文件，创建 add.js 和 minus.js 在 index.js 中引入：
+1.读取入口文件内容
+
+2.分析入口文件，递归读取模块所依赖的文件内容，生成 AST 语法树
+
+3.根据 AST 语法树，生成浏览器能够运行的代码
+具体细节：
+先配置好 webpack.config.js 文件，创建 add.js 和 minus.js 在 index.js 中引入：
 add.js
 
 ```js
@@ -177,7 +182,11 @@ AsyncSeriesBailHook:异步执行，无需返回值，返回 undefined 终止
 
 #### 构建模块
 
-1.先传入主模块路径和内容，获得模块信息放到 temp 数组 2.循环里面获得主模块的依赖 deps 3.遍历主模块的依赖 deps，调用 parse 获得依赖模块信息，继续放到 temps 数组中
+1.先传入主模块路径和内容，获得模块信息放到 temp 数组
+
+2.循环里面获得主模块的依赖 deps
+
+3.遍历主模块的依赖 deps，调用 parse 获得依赖模块信息，继续放到 temps 数组中
 实际就是将层层依赖进行收集打平
 
 ```js
@@ -209,7 +218,7 @@ buildModule(modulePath) {
 
 此时生成的 depsGraph:
 
-```json
+```
 {
   file: './src/index.js',
   code: '"use strict";\n' +
