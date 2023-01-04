@@ -1,4 +1,6 @@
 path = require("path");
+let MyPlugin = require("./plugins/MyPlugin");
+
 module.exports = {
   mode: "development",
   entry: "./src/index.js",
@@ -9,5 +11,5 @@ module.exports = {
   module: {
     rules: [],
   },
-  plugins: [],
+  plugins: [new MyPlugin()],
 };
