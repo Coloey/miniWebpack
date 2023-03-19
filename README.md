@@ -264,7 +264,7 @@ bundler(file) {
 })(absRequire, graph[file].code);
 ```
 
-执行 eval,也就执行 index.js 的代码，但是又会调用 require 函数，也就是我们传递的 absRequire,而执行 absRequire 就执行 rreturn require(graph[file].deps[relPath]),将执行外面这个 require,继续周而复始执行立即执行函数，调用 require,路径已经转化为绝对路径，成功执行相应的 eval(code)
+执行 eval,也就执行 index.js 的代码，但是又会调用 require 函数，也就是我们传递的 absRequire,而执行 absRequire 就执行 return require(graph[file].deps[relPath]),前面已经将import的文件路径转为绝对路径将执行外面这个 require,继续周而复始执行立即执行函数，调用 require,路径已经转化为绝对路径，成功执行相应的 eval(code)
 但是在执行 add.js 的 code，会遇到 exports 还没定义的问题，
 
 ```js
